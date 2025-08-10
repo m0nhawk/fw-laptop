@@ -15,3 +15,5 @@ jobs:
         uses: DeterminateSystems/determinate-nix-action@v3
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@main
+        with:
+          token: ${{ secrets.TOKEN }}
