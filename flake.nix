@@ -30,7 +30,7 @@
               inherit system;
               config = nixConfiguration;
               overlays = [
-                claudeCodeOverlay
+                # claudeCodeOverlay
               ];
             };
 
