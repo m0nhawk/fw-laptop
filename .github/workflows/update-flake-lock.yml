@@ -19,6 +19,7 @@ jobs:
       - name: Install Determinate Nix
         uses: DeterminateSystems/determinate-nix-action@v3
       - name: Update flake.lock
+        id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-reviewers: m0nhawk
