@@ -22,3 +22,6 @@ jobs:
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-reviewers: m0nhawk
+      - uses: mdarocha/comment-flake-lock-changelog@main
+        with:
+          pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
