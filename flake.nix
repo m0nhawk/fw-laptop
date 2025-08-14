@@ -45,6 +45,7 @@
               gitu
               # isd
               lazygit
+              opencommit
               semgrep
               starship
               topgrade
