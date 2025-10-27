@@ -59,7 +59,12 @@
             default = stable.buildEnv
               {
                 name = "home-packages";
-                paths = pkgs ++ pkgs-unstable ++ pkgs-unstable-unfree ++ pkgs-master-unfree;
+                paths = lib.concatLists [
+                  pkgs
+                  pkgs-unstable
+                  pkgs-unstable-unfree
+                  pkgs-master-unfree
+                ];
               };
           });
     };
