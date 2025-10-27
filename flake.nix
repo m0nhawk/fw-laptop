@@ -37,7 +37,6 @@
             pkgs = with stable; [
               nixpkgs-fmt
               nixpkgs-lint
-              nix-prefetch-git
             ];
 
             pkgs-unstable = with unstable; [
@@ -54,7 +53,6 @@
             pkgs-master-unfree = with masterWithUnfree; [
               claude-code
               codex
-              gemini-cli
             ];
           in
           {
