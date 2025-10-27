@@ -13,8 +13,6 @@
       nixConfiguration = {
         allowUnfree = true;
       };
-
-      claudeCodeOverlay = import ./overlays/claude-code.nix;
     in
     {
       packages = forAllSystems
