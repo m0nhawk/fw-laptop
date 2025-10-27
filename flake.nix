@@ -44,6 +44,7 @@
               semgrep
               starship
               topgrade
+              typst
             ];
 
             pkgs-unstable-unfree = with unstableWithUnfree; [
