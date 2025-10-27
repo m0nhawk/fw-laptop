@@ -43,13 +43,10 @@
             pkgs-unstable = with unstable; [
               devenv
               gitu
-              isd
               lazygit
-              opencommit
               semgrep
               starship
               topgrade
-              zellij
             ];
 
             pkgs-unstable-unfree = with unstableWithUnfree; [
