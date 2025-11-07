@@ -52,7 +52,7 @@
             pkgs-master-unfree = with masterWithUnfree; [
               claude-code
               codex
-              copilot-cli
+              github-copilot-cli
             ];
           in
           {
