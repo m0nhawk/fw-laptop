@@ -50,7 +50,6 @@
             pkgs-unstable-unfree = with unstableWithUnfree; [
             ];
             pkgs-master-unfree = with masterWithUnfree; [
-              _1password-cli
               claude-code
               codex
               gemini-cli
