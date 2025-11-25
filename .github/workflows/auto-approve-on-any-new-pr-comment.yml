@@ -1,0 +1,18 @@
+name: Auto-approve on any new PR comment
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  approve:
+    if: github.event.issue.pull_request != null
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Approve PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.issue.pull_request.html_url }}
+        run: gh pr review --approve "$PR_URL"
