@@ -3,7 +3,7 @@ name: "Update flake.lock"
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 20 * * *'
 
 jobs:
   update-flake-lock:
@@ -16,14 +16,32 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Install Determinate Nix
         uses: DeterminateSystems/determinate-nix-action@v3
+
       - name: Update flake.lock
         id: update-flake-lock
         uses: DeterminateSystems/update-flake-lock@main
         with:
           pr-reviewers: m0nhawk
-          token: ${{ secrets.TKN }}
-      - uses: mdarocha/comment-flake-lock-changelog@main
-        with:
-          pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+
+      # - uses: mdarocha/comment-flake-lock-changelog@main
+      #   with:
+      #     pull-request-number: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+
+      - name: Approve PR created by update-flake-lock
+        if: ${{ steps.update-flake-lock.outputs.pull-request-number != '' }}
+        run: |
+          gh pr review --approve "$PR"
+        env:
+          PR: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+          GH_TOKEN: ${{ secrets.TKN }}
+
+      - name: Enable auto-merge for flake.lock PR
+        if: ${{ steps.update-flake-lock.outputs.pull-request-number != '' }}
+        run: |
+          gh pr gh pr merge --auto --merge "$PR"
+        env:
+          PR: ${{ steps.update-flake-lock.outputs.pull-request-number }}
+          GH_TOKEN: ${{ github.token }}
