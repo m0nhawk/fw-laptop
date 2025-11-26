@@ -41,7 +41,7 @@ jobs:
       - name: Enable auto-merge for flake.lock PR
         if: ${{ steps.update-flake-lock.outputs.pull-request-number != '' }}
         run: |
-          gh pr gh pr merge --auto --merge "$PR"
+          gh pr merge --auto --merge "$PR"
         env:
           PR: ${{ steps.update-flake-lock.outputs.pull-request-number }}
           GH_TOKEN: ${{ github.token }}
