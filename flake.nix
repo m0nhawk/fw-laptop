@@ -39,6 +39,7 @@
 
             pkgs-unstable = with unstable; [
               devenv
+              duckdb
               gitu
               lazygit
               semgrep
