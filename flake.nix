@@ -51,6 +51,7 @@
             pkgs-unstable-unfree = with unstableWithUnfree; [
             ];
             pkgs-master-unfree = with masterWithUnfree; [
+              cacert
               claude-code
               codex
               gemini-cli
