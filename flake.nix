@@ -46,21 +46,7 @@
             ];
 
             plugins = {
-              snacks = {
-                enable = true;
-          
-                # Enable the terminal submodule
-                terminal.enable = true;
-          
-                # # Optional useful defaults
-                # terminal = {
-                #   enable = true;
-                #   shell = "bash";      # or "bash", "fish", etc
-                #   direction = "float"; # float | horizontal | vertical
-                #   size = 0.9;          # float size ratio
-                # };
-              };
-          
+              snacks.enable = true;
               opencode.enable = true;
             };
           };
