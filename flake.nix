@@ -55,7 +55,7 @@
                 # Optional useful defaults
                 terminal = {
                   enable = true;
-                  shell = "zsh";       # or "bash", "fish", etc
+                  shell = "bash";      # or "bash", "fish", etc
                   direction = "float"; # float | horizontal | vertical
                   size = 0.9;          # float size ratio
                 };
