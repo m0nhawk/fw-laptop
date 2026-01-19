@@ -39,12 +39,30 @@
           nvim = nixvim.legacyPackages.${system}.makeNixvim {
             enableMan = true; # optional; default is true in nixvim docs
             # Your nixvim config goes here (examples):
-            # colorschemes.catppuccin.enable = true;
+            colorschemes.catppuccin.enable = true;
             # plugins.lualine.enable = true;
             extraPlugins = [
-              stable.vimPlugins.snacks-nvim
               stable.vimPlugins.opencode-nvim
             ];
+
+            plugins = {
+              snacks = {
+                enable = true;
+          
+                # Enable the terminal submodule
+                terminal.enable = true;
+          
+                # Optional useful defaults
+                terminal = {
+                  enable = true;
+                  shell = "zsh";       # or "bash", "fish", etc
+                  direction = "float"; # float | horizontal | vertical
+                  size = 0.9;          # float size ratio
+                };
+              };
+          
+              opencode.enable = true;
+            };
           };
 
           pkgs = with stable; [
