@@ -6,7 +6,7 @@
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master, nixvim }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master }:
     let
       supportedSystems = [ "x86_64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
