@@ -4,11 +4,6 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
-
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, nixpkgs-master, nixvim }:
@@ -36,21 +31,6 @@
             ];
           };
 
-          nvim = nixvim.legacyPackages.${system}.makeNixvim {
-            enableMan = true; # optional; default is true in nixvim docs
-            # Your nixvim config goes here (examples):
-            colorschemes.catppuccin.enable = true;
-            # plugins.lualine.enable = true;
-            extraPlugins = [
-              stable.vimPlugins.opencode-nvim
-            ];
-
-            plugins = {
-              snacks.enable = true;
-              opencode.enable = true;
-            };
-          };
-
           pkgs = with stable; [
             nixpkgs-fmt
             nixpkgs-lint
@@ -69,6 +49,7 @@
 
           pkgs-unstable-unfree = with unstableWithUnfree; [
           ];
+
           pkgs-master-unfree = with masterWithUnfree; [
             claude-code
             codex
@@ -85,11 +66,8 @@
               pkgs-unstable
               pkgs-unstable-unfree
               pkgs-master-unfree
-
-              [ nvim ]
             ];
           };
-          nvim = nvim;
         });
     };
 }
