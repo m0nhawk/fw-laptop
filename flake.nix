@@ -43,6 +43,7 @@
             # plugins.lualine.enable = true;
             extraPlugins = [
               stable.vimPlugins.opencode-nvim
+              stable.vimPlugins.snacks
             ];
           };
 
