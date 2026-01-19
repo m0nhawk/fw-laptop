@@ -42,8 +42,8 @@
             # colorschemes.catppuccin.enable = true;
             # plugins.lualine.enable = true;
             extraPlugins = [
-              stable.vimPlugins.opencode-nvim
               stable.vimPlugins.snacks-nvim
+              stable.vimPlugins.opencode-nvim
             ];
           };
 
