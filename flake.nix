@@ -26,9 +26,7 @@
           masterWithUnfree = import nixpkgs-master {
             inherit system;
             config = nixConfiguration;
-            overlays = [
-              # claudeCodeOverlay
-            ];
+            overlays = [];
           };
 
           pkgs = with stable; [
@@ -39,7 +37,7 @@
           pkgs-unstable = with unstable; [
             devenv
             duckdb
-            gitu
+            # gitu
             lazygit
             semgrep
             starship
