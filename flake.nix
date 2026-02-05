@@ -53,6 +53,7 @@
             codex
             gemini-cli
             github-copilot-cli
+            llama-cpp
             opencode
           ];
         in
