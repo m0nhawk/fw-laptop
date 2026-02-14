@@ -11,7 +11,7 @@
       supportedSystems = [ "x86_64-linux" ];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       nixConfiguration = { allowUnfree = true; };
-      codexOverlay = import ./overlays/claude-code.nix;
+      codexOverlay = import ./overlays/codex.nix;
     in
     {
       packages = forAllSystems (system:
