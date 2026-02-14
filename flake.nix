@@ -39,7 +39,7 @@
             backblaze-b2
             devenv
             duckdb
-            gitu
+            # gitu
             lazygit
             semgrep
             starship
