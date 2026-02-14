@@ -12,7 +12,7 @@ final: prev: {
     cargoDeps = oldAttrs.cargoDeps.overrideAttrs (prev.lib.const {
       name = "codex-${oldAttrs.version}-vendor.tar.gz";
       src = oldAttrs.src;
-      outputHash = "";
+      outputHash = prev.lib.fakeHash;
     });
   });
 }
