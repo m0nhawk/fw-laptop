@@ -13,6 +13,8 @@ final: prev: {
   in {
     inherit version src sourceRoot;
 
+     buildInputs = (oldAttrs.buildInputs or []) ++ [ final.libcap ];
+
     cargoDeps = prev.rustPlatform.fetchCargoVendor {
       inherit src sourceRoot;
       name = "${oldAttrs.pname}-${version}-cargo-deps";
