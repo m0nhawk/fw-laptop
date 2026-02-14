@@ -1,7 +1,7 @@
 final: prev: {
-  codex = prev.codex.overrideAttrs (oldAttrs: {
+  codex = prev.codex.overrideAttrs (oldAttrs: let
     version = "0.101.0";
-
+  in {
     src = prev.fetchFromGitHub {
       owner = "openai";
       repo = "codex";
