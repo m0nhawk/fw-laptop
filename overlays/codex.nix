@@ -13,7 +13,7 @@ final: prev: {
   in {
     inherit version src sourceRoot;
 
-    cargoDeps = prev.rustPlatform.fetchCargoTarball {
+    cargoDeps = prev.rustPlatform.fetchCargoVendor {
       inherit src sourceRoot;
       name = "${oldAttrs.pname}-${version}-cargo-deps";
       hash = "";
