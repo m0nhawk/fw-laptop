@@ -15,7 +15,7 @@ final: prev: {
 
     cargoDeps = prev.rustPlatform.fetchCargoTarball {
       inherit src sourceRoot;
-      name = "${old.pname}-${version}-cargo-deps";
+      name = "${oldAttrs.pname}-${version}-cargo-deps";
       hash = "";
     };
   });
