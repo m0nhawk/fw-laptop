@@ -6,7 +6,7 @@ final: prev: {
       owner = "openai";
       repo = "codex";
       tag = "rust-v${version}";
-      hash = "";
+      hash = "sha256-spWb/msjl9am7E4UkZfEoH0diFbvAfydJKJQM1N1aoI=";
     };
 
     sourceRoot = "${src.name}/codex-rs";
