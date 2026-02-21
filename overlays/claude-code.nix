@@ -12,9 +12,8 @@ final: prev: {
     inherit version src npmDepsHash;
 
     npmDeps = final.fetchNpmDeps {
-      inherit (final) src;
-      name = "${prev.pname}-${final.version}-npm-deps";
-      hash = final.npmDepsHash;
+      name = "${prev.pname}-${version}-npm-deps";
+      hash = npmDepsHash;
     };
   });
 }
