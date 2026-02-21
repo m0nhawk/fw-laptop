@@ -8,10 +8,5 @@ final: prev: {
     };
 
     npmDepsHash = final.lib.fakeHash;
-
-    # npmDeps = final.fetchNpmDeps {
-    #   name = "${prev.pname}-${version}-npm-deps";
-    #   hash = npmDepsHash;
-    # };
   });
 }
