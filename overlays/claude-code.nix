@@ -7,9 +7,7 @@ final: prev: {
       url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-${version}.tgz";
       hash = "sha256-pSPZzbLhFsE8zwlp+CHB5MqS1gT3CeIlkoAtswmxCZs=";
     };
-
-    npmDepsHash = "";
   in {
-    inherit version src npmDepsHash;
+    inherit version src;
   });
 }
