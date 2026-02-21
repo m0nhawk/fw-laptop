@@ -1,5 +1,5 @@
 final: prev: {
-  claude-code = prev.claude-code.overrideAttrs (oldAttrs: rec {
+  claude-code = prev.claude-code.overrideAttrs (oldAttrs: {
     version = "2.1.50";
 
     src = final.fetchzip {
@@ -9,7 +9,7 @@ final: prev: {
 
     npmDepsHash = final.lib.fakeHash;
     npmDeps = final.fetchNpmDeps {
-      inherit (final) src;
+      inherit (final) version src npmDeps;
       name = "${final.pname}-${final.version}-npm-deps";
       hash = final.npmDepsHash;
     };
