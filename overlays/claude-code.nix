@@ -11,5 +11,10 @@ final: prev: {
     };
 
     npmDepsHash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    postPatch = ''
+      # https://github.com/anthropics/claude-code/issues/15195
+      substituteInPlace cli.js \
+        --replace-fail '#!/bin/sh' '#!/usr/bin/env sh'
+    '';
   });
 }
