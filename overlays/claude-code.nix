@@ -8,5 +8,10 @@ final: prev: {
     };
 
     npmDepsHash = final.lib.fakeHash;
+    npmDeps = fetchNpmDeps {
+      inherit (final) src;
+      name = "${final.pname}-${final.version}-npm-deps";
+      hash = final.npmDepsHash;
+    };
   });
 }
