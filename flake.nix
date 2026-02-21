@@ -12,7 +12,6 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
       nixConfiguration = { allowUnfree = true; };
       codexOverlay = import ./overlays/codex.nix;
-      claudeCodeOverlay = import ./overlays/claude-code.nix;
     in
     {
       packages = forAllSystems (system:
@@ -28,7 +27,7 @@
           masterWithUnfree = import nixpkgs-master {
             inherit system;
             config = nixConfiguration;
-            overlays = [ codexOverlay claudeCodeOverlay ];
+            overlays = [ codexOverlay ];
           };
 
           pkgs = with stable; [
