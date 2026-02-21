@@ -9,7 +9,7 @@ final: prev: {
 
     npmDepsHash = "";
   in {
-    inherit version src npmDepsHash;
+    inherit (prev) version src npmDepsHash;
 
     npmDeps = final.fetchNpmDeps {
       name = "${prev.pname}-${version}-npm-deps";
