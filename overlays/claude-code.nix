@@ -1,6 +1,6 @@
 
 final: prev: {
-  claude-code = prev.claude-code.overrideAttrs (oldAttrs: let
+  claude-code = prev.claude-code.overrideAttrs (oldAttrs: {
     version = "2.1.50";
   
     src = prev.fetchzip {
@@ -9,7 +9,5 @@ final: prev: {
     };
 
     npmDepsHash = "";
-  in {
-    inherit version src npmDepsHash;
   });
 }
