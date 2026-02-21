@@ -9,10 +9,5 @@ final: prev: {
     };
   in {
     inherit version src;
-
-    npmDeps = prev.fetchNpmDeps {
-      inherit src;
-      hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-    };
   });
 }
