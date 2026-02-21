@@ -52,6 +52,7 @@
           pkgs-master-unfree = with masterWithUnfree; [
             claude-code
             codex
+            entire
             gemini-cli
             github-copilot-cli
             llama-cpp
