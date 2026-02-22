@@ -56,6 +56,7 @@
             gemini-cli
             github-copilot-cli
             llama-cpp
+            mistral-vibe
             opencode
           ];
         in
