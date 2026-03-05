@@ -1,12 +1,12 @@
 final: prev: {
   codex = prev.codex.overrideAttrs (oldAttrs: let
-    version = "0.104.0";
+    version = "0.111.0";
   
     src = prev.fetchFromGitHub {
       owner = "openai";
       repo = "codex";
       tag = "rust-v${version}";
-      hash = "sha256-spWb/msjl9am7E4UkZfEoH0diFbvAfydJKJQM1N1aoI=";
+      hash = "";
     };
 
     sourceRoot = "${src.name}/codex-rs";
@@ -18,7 +18,7 @@ final: prev: {
     cargoDeps = prev.rustPlatform.fetchCargoVendor {
       inherit src sourceRoot;
       name = "${oldAttrs.pname}-${version}-cargo-deps";
-      hash = "sha256-8XNOqkr03+tI+gqJRR65iWYQ0zsqAiDl2V5bwPoWAcA=";
+      hash = "";
     };
   });
 }

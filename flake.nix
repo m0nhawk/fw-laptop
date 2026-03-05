@@ -36,20 +36,21 @@
           ];
 
           pkgs-unstable = with unstable; [
-            devenv
-            duckdb
-            # gitu
-            lazygit
-            semgrep
-            starship
-            topgrade
-            typst
           ];
 
           pkgs-unstable-unfree = with unstableWithUnfree; [
           ];
 
           pkgs-master-unfree = with masterWithUnfree; [
+            devenv
+            duckdb
+            gitu
+            lazygit
+            semgrep
+            starship
+            topgrade
+            typst
+
             claude-code
             codex
             entire
